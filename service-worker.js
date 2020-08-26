@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/zenheim_map/precache-manifest.702cbe91760745b0d64ca08ada0bc656.js"
+  "/zenheim_map/precache-manifest.4e9e62cb99ac5b771c380aee84009b1d.js"
 );
 
 self.addEventListener('message', (event) => {
