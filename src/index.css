@@ -1,13 +1,222 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+
+.message {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.message > img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo {
+  font-family: "Cinzel", serif;
+  font-size: 2.25rem;
+  padding: 0 25px;
+}
+
+.break {
+  height: 0;
+  flex-basis: 100%;
+}
+
+.search {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75vw;
+  max-width: 350px;
+  z-index: 10;
+}
+
+.search input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+input:focus {
+  font-size: 1.15rem;
+  outline: 0;
+  transition: all 0.25s ease;
+}
+
+.locate,
+.toggle-btn-wrapper {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+.locate img {
+  width: 30px;
+  cursor: pointer;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+  position: relative;
+  width: 83px;
+  height: 37px;
+  margin: 0 auto;
+  border-radius: 40px;
+}
+
+input[type="checkbox"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#_1st-toggle-btn span {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  opacity: 1;
+  background-color: #fff;
+  box-shadow: 0px 2px 25px #808080;
+  border-radius: 40px;
+  transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+#_1st-toggle-btn span:before,
+#_1st-toggle-btn span:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#_1st-toggle-btn span:before {
+  background-color: #fff;
+  transform: translate(-37px, 0px);
+  z-index: 1;
+}
+
+#_1st-toggle-btn span:after {
+  background-color: darkred;
+  transform: translate(4px, 0px);
+  z-index: 0;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span {
+  background-color: rgb(0, 0, 0);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:active + span {
+  opacity: 0.5;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:before {
+  background-color: #000;
+  transform: translate(37px, -10px);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:after {
+  background-color: goldenrod;
+  transform: translate(50px, 0px);
+}
+/* Toggle button styling ends here */
+
+.info-sidebar {
+  background: rgb(226, 236, 236);
+  padding: 2rem;
+  margin-bottom: 1rem;
+  width: 25vw;
+  height: 67.5vh;
+  top: 7rem;
+  left: 1rem;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0px 2px 25px #808080;
+  opacity: 0.85;
+  overflow: scroll;
+}
+
+.info-sidebar-detail {
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.75px;
+  margin-right: -0.75px;
+  text-align: center;
+  bottom: 0;
+  width: 100;
+  margin: 27.5px;
+}
+
+@media only screen and (max-width: 750px) {
+  .logo {
+    font-size: 1.75rem;
+    display: none;
+  }
+  .search {
+    width: 52.5vw;
+    top: 1.25rem;
+    left: 1rem;
+    transform: translateX(0%);
+  }
+  .search input {
+    padding: 0.3rem;
+  }
+  input:focus {
+    font-size: 1rem;
+  }
+  .toggle-btn-wrapper {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+  .info-sidebar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .logo {
+    font-size: 1.5rem;
+  }
 }
